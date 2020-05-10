@@ -75,6 +75,12 @@ code {
     'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
     'Courier New', Courier, monospace;
   line-height: 1.5;
+  background-color: #272822;
+  color: #f8f8f2;
+}
+
+main p code {
+  padding: 0.2em 0.4em;
 }
 
 pre {
@@ -177,10 +183,20 @@ pre {
   margin-bottom: 2em;
 }
 
-.postlist-date {
+.postlist-date,
+.postlist-reading {
   font-size: 0.8em;
   margin-top: 0.5em;
+  margin-right: 0.5em;
+}
+
+.postlist-meta {
   display: block;
+  white-space: nowrap;
+}
+
+.postlist-date {
+  margin-right: 0.4em;
 }
 
 .postlist-summary {
@@ -278,16 +294,20 @@ nav {
   text-decoration: none;
   font-style: normal;
   margin-left: 0.1em;
-}
-a[href].direct-link,
-a[href].direct-link:visited {
-  color: transparent;
-}
-a[href].direct-link:focus,
-a[href].direct-link:focus:visited,
-:hover > a[href].direct-link,
-:hover > a[href].direct-link:visited {
   color: #aaa;
+}
+
+@media (hover: hover) {
+  a[href].direct-link,
+  a[href].direct-link:visited {
+    color: transparent;
+  }
+  a[href].direct-link:focus,
+  a[href].direct-link:focus:visited,
+  :hover > a[href].direct-link,
+  :hover > a[href].direct-link:visited {
+    color: var(--blue);
+  }
 }
 
 /* Page specific */
@@ -301,7 +321,7 @@ a[href].direct-link:focus:visited,
 }
 
 .tmpl-home main .container {
-  margin-bottom: 4em;
+  margin-top: 3em;
 }
 
 .tmpl-home .page-heading {
@@ -325,6 +345,7 @@ a[href].direct-link:focus:visited,
 }
 
 .tmpl-post main p,
+.tmpl-post main ul,
 .tmpl-post .page-heading,
 .tmpl-post main h2 {
   max-width: 90%;
@@ -368,16 +389,18 @@ a[href].direct-link:focus:visited,
   justify-content: space-between;
 }
 
-.intro time {
-  font-size: 0.8em;
-}
-
 .footer {
   text-align: center;
   color: var(--gray);
-  padding: 1em;
-  margin: 3em 0 2em;
+  padding: 3em 0;
   font-size: 0.7em;
+}
+
+.footer a,
+.footer a[href] {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 @media (min-width: 800px) {
@@ -402,8 +425,9 @@ a[href].direct-link:focus:visited,
     padding-top: 4em;
   }
 
-  .postlist-date {
+  .postlist-meta {
     display: inline-block;
+    margin-top: 0;
   }
 }
 

@@ -8,6 +8,7 @@ const markdownItAnchor = require('markdown-it-anchor');
 const markdownItImsize = require('markdown-it-imsize');
 const Terser = require('terser');
 const CleanCSS = require('clean-css');
+const readingTime = require('./src/_11ty/reading-time.js');
 
 var env = process.env.ELEVENTY_ENV;
 
@@ -15,6 +16,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
+  eleventyConfig.addPlugin(readingTime);
 
   eleventyConfig.setDataDeepMerge(true);
 
@@ -28,10 +30,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
-  });
-
-  eleventyConfig.addFilter('debug', (dateObj) => {
-    return JSON.stringify(dateObj);
   });
 
   // Get the first `n` elements of a collection.
@@ -87,12 +85,14 @@ module.exports = function (eleventyConfig) {
     return getPosts(collection);
   });
 
-  eleventyConfig.addPassthroughCopy('./src/img');
+  eleventyConfig.addPassthroughCopy('src/img');
+  eleventyConfig.addPassthroughCopy('src/manifest.json');
+  eleventyConfig.addPassthroughCopy('src/browserconfig.xml');
 
   /* Markdown Overrides */
   let markdownLibrary = markdownIt({
     html: true,
-    breaks: true,
+    breaks: false,
     linkify: true,
   })
     .use(markdownItAnchor, {
@@ -110,6 +110,10 @@ module.exports = function (eleventyConfig) {
       require('./src/_11ty/minify-html.js'),
     );
   } else {
+    eleventyConfig.addFilter('debug', (dateObj) => {
+      return JSON.stringify(dateObj);
+    });
+
     // Browsersync Overrides
     eleventyConfig.setBrowserSyncConfig({
       callbacks: {

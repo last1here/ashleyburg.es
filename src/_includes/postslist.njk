@@ -4,23 +4,25 @@
       {% if post.data.note %}
           <h2>{{ post.data.title | orphanWrap | safe }}</h2>
           <small class="external-mark">(note)</small>
-          <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+          <span class="postlist-meta">
+            <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+          </span>
           <div class="postlist-summary">
             {{ post.templateContent | safe }}
           </div>
       {% else %}
         {% if post.data.externalurl %}
           <h2><a href="{{ post.data.externalurl }}">{{ post.data.title | orphanWrap | safe }}</a></h2> <small class="external-mark">(external)</small>
+          <span class="postlist-meta">
+            <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+          </span>
         {% else %}
           <h2><a href="{{ post.url | url }}" class="postlist-link">{{ post.data.title | orphanWrap | safe }}</a></h2>
+          <span class="postlist-meta">
+            <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+            <span class="postlist-reading">{{ post.templateContent | readingTime }}</span>
+          </span>
         {% endif %}
-        <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-        {# {% for tag in post.data.tags %}
-          {%- if collections.tagList.indexOf(tag) != -1 -%}
-            {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-            <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
-          {%- endif -%}
-        {% endfor %} #}
 
         {% if post.data.description %}
           <p class="postlist-summary">{{ post.data.description }}</p>
