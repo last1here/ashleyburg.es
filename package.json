@@ -1,0 +1,40 @@
+{
+  "name": "@last1here/site",
+  "version": "0.0.1",
+  "description": "A starter repository for a blog web site using the Eleventy static site generator.",
+  "scripts": {
+    "build": "set ELEVENTY_ENV=prod && eleventy",
+    "watch": "set ELEVENTY_ENV=dev && eleventy --watch",
+    "serve": "set ELEVENTY_ENV=dev && npx @11ty/eleventy --serve",
+    "serve:prod": "set ELEVENTY_ENV=prod && npx @11ty/eleventy --serve",
+    "debug": "DEBUG=* eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/11ty/eleventy-base-blog.git"
+  },
+  "author": {
+    "name": "Ash Burgess",
+    "email": "me@ashleyburg.es",
+    "url": "https://ashleyburg.es/"
+  },
+  "license": "MIT",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/last1here/ashleyburg.es/issues"
+  },
+  "homepage": "https://github.com/last1here/ashleyburg.es#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy-navigation": "^0.1.5",
+    "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "clean-css": "^4.2.3",
+    "html-minifier": "^4.0.0",
+    "luxon": "^1.22.0",
+    "markdown-it": "^10.0.0",
+    "markdown-it-anchor": "^5.2.5",
+    "markdown-it-imsize": "^2.0.1",
+    "terser": "^4.6.13"
+  }
+}

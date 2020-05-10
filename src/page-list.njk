@@ -1,0 +1,37 @@
+---
+pagination:
+  data: collections.all
+  size: 20
+  alias: entries
+permalink: /page-list/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}
+renderData:
+  title: All Pages
+---
+
+{% extends 'layouts/page.njk' %}
+
+{% block heading %}
+  <h1>All Pages</h1>
+{% endblock %}
+
+{% block content %}
+  <section class="container">
+    <table>
+      <thead>
+        <th>URL</th>
+        <th>Page Title</th>
+      </thead>
+      <tbody>
+    {%- for entry in entries %}
+      <tr>
+        <td><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></td>
+        <td>{{ entry.data.title }}</td>
+      </tr>
+    {%- endfor %}
+      </tbody>
+    </table>
+  </section>
+{% endblock %}
+
+
+

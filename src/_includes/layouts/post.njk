@@ -1,0 +1,33 @@
+---
+templateClass: tmpl-post
+---
+
+{% extends 'layouts/base.njk' %}
+
+{% block heading %}
+  <h1>{{ title | orphanWrap | safe }}</h1>
+
+  <div class="intro">
+    <time class="postlist-date" datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+
+    <ul class="tags">
+      {% for tag in tags -%}
+        <li>
+          <a href="/tags/{{ tag }}" class="tag">#{{ tag }}</a>
+        </li>
+      {% endfor -%}
+    </ul>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <article>
+    {{ content | safe }}
+  </article>
+{% endblock %}
+
+{% block footer %}
+  <p>
+    <a href="{{ '/' | url }}">← Home</a>
+  </p>
+{% endblock %}

@@ -1,0 +1,31 @@
+---
+templateClass: tmpl-archive
+permalink: /posts/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}
+description: Full post archive containing various types of post from my development experiences and other things.
+title: Blog
+pagination:
+  data: collections.posts
+  size: 10
+  alias: entries
+eleventyNavigation:
+  key: Blog
+  order: 3
+---
+
+{% extends 'layouts/page.njk' %}
+
+{% block heading %}
+  <h1>Blog</h1>
+{% endblock %}
+
+{% block content %}
+  <section class="container">
+    {% set postslist = entries %}
+    {% include "postslist.njk" %}
+  </section>
+
+  <section class="container pagination">
+    <div class="pagination-item">{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Newer</a>{% else %}{% endif %}</div>
+    <div class="pagination-item">{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Older</a>{% else %}{% endif %}</div>
+  </section>
+{% endblock %}

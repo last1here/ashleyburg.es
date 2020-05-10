@@ -1,0 +1,23 @@
+---
+permalink: /tags/
+renderData:
+  title: All Tags
+---
+{% extends 'layouts/page.njk' %}
+
+{% block heading %}
+  <h1>Tags</h1>
+{% endblock %}
+
+{% block content %}
+  <section class="container">
+    <ul class="postlist">
+      {% for tag in collections.tagList  %}
+        <li>
+          {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+          <a href="{{ tagUrl | url }}" class="">{{ tag }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock %}

@@ -1,0 +1,14 @@
+<nav class="container nav-container">
+  <ul class="nav">
+    <li class="nav-item nav-item__home">
+      <a href="/">
+        AB
+      </a>
+    </li>
+    {%- for entry in collections.all | eleventyNavigation %}
+      <li class="nav-item">
+        <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+      </li>
+    {%- endfor %}
+  </ul>
+</nav>

@@ -1,0 +1,39 @@
+---
+templateClass: tmpl-home
+eleventyNavigation:
+  key: Home
+  order: 1
+---
+
+{% extends 'layouts/page.njk' %}
+
+{% block heading %}
+  <h1>Ashley Burgess</h1>
+  <p class="sub">Developer</p>
+{% endblock %}
+
+{% block content %}
+  <section class="container socials">
+    <a href="http://codepen.io/Last1Here">CodePen</a>
+    <a href="http://github.com/last1here">GitHub</a>
+    <a href="http://twitter.com/Ash_Burgess">Twitter</a>
+  </section>
+
+  <section class="container">
+    <p>
+      Hi, I'm Ash. A developer from Manchester, UK. I have a strong passion for full stack development, currently focusing on Web APIs and Single Page Application development using C#, Angular and other. I am currently employed by <a href="http://www.county-rental.co.uk/">County Car &amp; Van Hire</a> as the lead developer.
+    </p>
+    <p>
+      View the <a href="{{ '/about/' | url }}">about section</a> for a complete  summary of my current focuses.
+    </p>
+  </section>
+
+  <section class="container latest-posts">
+    <h2 class="latest-posts-heading"><a href="{{ '/posts/' | url }}">Latest Blog Posts</a></h2>
+
+    {% set postslist = collections.posts | head(3) %}
+    {% include "postslist.njk" %}
+
+    <p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
+  </section>
+{% endblock %}

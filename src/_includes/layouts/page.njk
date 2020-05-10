@@ -1,0 +1,13 @@
+---
+templateClass: tmpl-page
+---
+
+{% extends 'layouts/base.njk' %}
+
+{% block heading %}
+  <h1>{{ title | orphanWrap | safe }}</h1>
+{% endblock %}
+
+{% block content %}
+    {{ content | safe }}
+{% endblock %}

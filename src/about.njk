@@ -1,0 +1,24 @@
+---
+templateClass: tmpl-about
+permalink: /about/
+eleventyNavigation:
+  key: About
+  order: 1
+---
+
+{% extends 'layouts/page.njk' %}
+
+{% block heading %}
+  <h1>About</h1>
+{% endblock %}
+
+{% block content %}
+  <section class="container">
+    <p>
+      Hi, I'm Ash. A web developer from Manchester, UK. I have a strong passion for both back and frontend development. I am currently employed at <a href="http://www.county-rental.co.uk/">County Car &amp; Van Hire</a>.
+    </p>
+    <p>
+      I have an in-depth knowledge of PHP, CSS, JavaScript, and a wide array of their frameworks. I am always growing my skills through hands on development, currently developing C# windows applications.
+    </p>
+  </section>
+{% endblock %}
