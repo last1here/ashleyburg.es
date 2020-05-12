@@ -17,14 +17,16 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Summary", name: "description", widget: "text" }
       - { label: "Tags", name: "tags", widget: "list", default: [] }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "markdown", minimal: true }
       - { label: "Post", name: "post", widget: "hidden", default: true }
   - name: "note"
     label: "Note"
     folder: "src/posts"
     create: true
     slug: "{{year}}-{{month}}_note_{{slug}}"
-    filter: { field: "note", value: "true" }
+    filter: { field: "note", value: true }
+    editor:
+      preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
@@ -37,18 +39,12 @@ collections:
     folder: "src/posts"
     create: true
     slug: "{{year}}-{{month}}_link_{{slug}}"
-    filter: { field: "externalurl", value: "true" }
+    filter: { field: "link", value: true }
     editor:
       preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Summary", name: "description", widget: "text" }
-      - {
-          label: "External Url",
-          name: "externalurl",
-          widget: "string",
-          default: "",
-        }
-      - {
-        label: "Tags", name: "tags", widget: "list", default: [] }
+      - { label: "External Url", name: "url", widget: "string", default: "" }
+      - { label: "Link", name: "link", widget: "hidden", default: true }

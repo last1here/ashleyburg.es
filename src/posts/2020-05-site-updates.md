@@ -18,7 +18,7 @@ portfolio, something the previous iteration didnt particularly offer.
 
 The intial step I
 
-<!-- ## Features
+## Features
 
 ```js/2-3
 // this is a command
@@ -29,7 +29,7 @@ function myCommand() {
 
 // Test with a line break above this line.
 console.log('Test');
-``` -->
+```
 
 ## Deployment
 

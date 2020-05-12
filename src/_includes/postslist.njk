@@ -11,8 +11,8 @@
             {{ post.templateContent | safe }}
           </div>
       {% else %}
-        {% if post.data.externalurl %}
-          <h2><a href="{{ post.data.externalurl }}">{{ post.data.title | orphanWrap | safe }}</a></h2> <small class="external-mark">(external)</small>
+        {% if post.data.link %}
+          <h2><a href="{{ post.data.url }}">{{ post.data.title | orphanWrap | safe }}</a></h2> <small class="external-mark">(external)</small>
           <span class="postlist-meta">
             <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
           </span>

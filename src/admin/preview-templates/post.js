@@ -29,7 +29,7 @@ const Post = createClass({
                 ${entry.getIn(['data', 'tags'], []).map(
                   (tag) =>
                     html`<li>
-                      <a href="#" class="tag" rel="tag">${tag}</a>
+                      <a href="#" class="tag" rel="tag">#${tag}</a>
                     </li> `,
                 )}
               </ul>
