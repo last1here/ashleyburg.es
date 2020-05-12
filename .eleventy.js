@@ -91,7 +91,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/admin');
   eleventyConfig.addPassthroughCopy({
     'src/admin/config.yml': true,
-    'src/_includes/index.client.css': true,
+    'src/_includes/index.client.css': 'index.client.css',
   });
 
   /* Markdown Overrides */
