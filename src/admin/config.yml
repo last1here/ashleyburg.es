@@ -21,14 +21,14 @@ collections:
       - {
           label: "Permalink",
           name: "permalink",
-          widget: "text",
+          widget: "string",
           required: false,
           hint: "Set the url for the post.",
         }
       - {
           label: "Layout",
           name: "layout",
-          widget: "text",
+          widget: "string",
           required: false,
           hint: "Custom layout for the post.",
         }
