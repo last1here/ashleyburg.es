@@ -1,0 +1,16 @@
+---
+permalink: 404.html
+eleventyExcludeFromCollections: true
+---
+
+{% extends 'layouts/page.njk' %}
+
+{% block heading %}
+  <h1>Content not found</h1>
+{% endblock %}
+
+{% block content %}
+  <section class="container">
+     <p>Go <a href="{{ '/' | url }}">home</a>.</p>
+  </section>
+{% endblock %}

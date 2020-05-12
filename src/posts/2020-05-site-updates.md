@@ -1,7 +1,7 @@
 ---
 title: Site update
+date: 2020-05-02T00:00:00.000Z
 description: I've decided to update my site using some more modern tech.
-date: 2020-05-02
 tags:
   - site-updates
 layout: post

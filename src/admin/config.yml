@@ -16,8 +16,22 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Summary", name: "description", widget: "text" }
-      - { label: "Tags", name: "tags", widget: "list", default: [] }
       - { label: "Body", name: "body", widget: "markdown", minimal: true }
+      - { label: "Tags", name: "tags", widget: "list", default: [] }
+      - {
+          label: "Permalink",
+          name: "permalink",
+          widget: "text",
+          required: false,
+          hint: "Set the url for the post.",
+        }
+      - {
+          label: "Layout",
+          name: "layout",
+          widget: "text",
+          required: false,
+          hint: "Custom layout for the post.",
+        }
       - { label: "Post", name: "post", widget: "hidden", default: true }
   - name: "note"
     label: "Note"
@@ -48,3 +62,9 @@ collections:
       - { label: "Summary", name: "description", widget: "text" }
       - { label: "External Url", name: "url", widget: "string", default: "" }
       - { label: "Link", name: "link", widget: "hidden", default: true }
+      - {
+          label: "Permalink",
+          name: "permalink",
+          widget: "hidden",
+          default: false,
+        }

@@ -6,4 +6,5 @@ url: https://templates.netlify.com/template/eleventy-netlify-boilerplate/
 tags:
   - ext
 link: true
+permalink: false
 ---

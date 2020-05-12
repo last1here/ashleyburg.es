@@ -22,7 +22,6 @@ const Post = createClass({
                     'dd LLL yyyy',
                   )}
                 </time>
-                <span class="postlist-reading">X mins</span>
               </span>
 
               <ul class="tags">
@@ -40,9 +39,9 @@ const Post = createClass({
 
       <main>
         <p>
-          <small
-            >description: ${entry.getIn(['data', 'description'], '')}</small
-          >
+          <small>
+            description: ${entry.getIn(['data', 'description'], '')}
+          </small>
         </p>
 
         <article>
