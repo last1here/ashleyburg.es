@@ -6,3 +6,5 @@ tags:
   - test
 note: "true"
 ---
+
+Simple test note.
