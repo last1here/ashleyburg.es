@@ -1,13 +1,11 @@
 backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
-media_folder: "src/img"
-public_folder: "img"
+media_folder: "src/assets"
+public_folder: "assets"
 local_backend: true
 publish_mode: editorial_workflow
-
 collections:
-  # Our blog posts
   - name: "blog"
     label: "Post"
     folder: "src/posts"

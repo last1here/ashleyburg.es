@@ -85,7 +85,7 @@ module.exports = function (eleventyConfig) {
     return getPosts(collection);
   });
 
-  eleventyConfig.addPassthroughCopy('src/img');
+  eleventyConfig.addPassthroughCopy('src/assets');
   eleventyConfig.addPassthroughCopy('src/manifest.json');
   eleventyConfig.addPassthroughCopy('src/browserconfig.xml');
   eleventyConfig.addPassthroughCopy('src/admin');
