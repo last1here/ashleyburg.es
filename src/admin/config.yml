@@ -1,13 +1,9 @@
 backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
-
-# Uncomment below to enable drafts
-# publish_mode: editorial_workflow
-
-media_folder: "src/img" # Media files will be stored in the repo under images/uploads
+media_folder: "src/img"
 public_folder: "img"
-
+local_backend: true
 publish_mode: editorial_workflow
 
 collections:
@@ -17,12 +13,14 @@ collections:
     folder: "src/posts"
     create: true
     slug: "{{year}}-{{month}}_{{slug}}"
+    filter: { field: "post", value: true }
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Summary", name: "description", widget: "text" }
       - { label: "Tags", name: "tags", widget: "list", default: [] }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Post", name: "post", widget: "hidden", default: true }
   - name: "note"
     label: "Note"
     folder: "src/posts"
@@ -35,7 +33,7 @@ collections:
       - { label: "Summary", name: "description", widget: "text" }
       - { label: "Tags", name: "tags", widget: "list", default: [] }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Note", name: "note", widget: "hidden", default: "true" }
+      - { label: "Note", name: "note", widget: "hidden", default: true }
   - name: "link"
     label: "External Link"
     folder: "src/posts"

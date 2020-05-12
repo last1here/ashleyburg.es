@@ -5,6 +5,7 @@ date: 2020-05-02
 tags:
   - site-updates
 layout: post
+post: true
 ---
 
 I decided to use this strange time within the world to update my site from an
