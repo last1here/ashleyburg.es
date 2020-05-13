@@ -7,8 +7,8 @@
   --blue: #398ac2;
   --blue-hover: #215173;
   --white: #fff;
-  --header-background: #387dac;
-  --header-home:
+  --header-background: #398ac2;
+  --header-home: #387dac;
 }
 
 [data-theme='dark'] {
@@ -21,7 +21,7 @@
   --blue-hover: #215173;
   --white: #333;
   --header-background: #1d4663;
-  --header-home: #387dac73;
+  --header-home: #295e84;
 }
 
 * {
@@ -246,10 +246,8 @@ nav {
 
 .nav .nav-item__home a {
   padding: 0.8em 0.9em 0.8em 2em;
-
   background-color: var(--header-home);
   color: #fff;
-  /* border-radius: 0; */
 }
 
 .nav .nav-item__home a:hover {
@@ -265,10 +263,6 @@ nav {
   justify-content: space-between;
   margin-top: 2em;
 }
-
-/* .pagination-item {
-  min-width: 1px;
-} */
 
 .tags li {
   display: inline-block;
