@@ -7,16 +7,20 @@ const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItImsize = require('markdown-it-imsize');
 const Terser = require('terser');
-const CleanCSS = require('clean-css');
 const readingTime = require('./src/_11ty/reading-time.js');
+const pluginPWA = require('./src/_11ty/generate-sw');
+const postcss = require('postcss');
+const cssvariables = require('postcss-css-variables');
+const cssnano = require('cssnano');
 
-var env = process.env.ELEVENTY_ENV;
+var env = process.env.NODE_ENV;
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(readingTime);
+  // eleventyConfig.addPlugin(pluginPWA);
 
   eleventyConfig.setDataDeepMerge(true);
 
@@ -41,12 +45,20 @@ module.exports = function (eleventyConfig) {
     return array.slice(0, n);
   });
 
-  eleventyConfig.addFilter('cssmin', function (code) {
+  eleventyConfig.addNunjucksAsyncFilter('cssmin', function (code, callback) {
     if (env.trim() === 'dev') {
-      return code;
+      callback(null, code);
+      return;
     }
 
-    return new CleanCSS({}).minify(code).styles;
+    postcss([
+      cssvariables({
+        preserve: true,
+      }),
+      cssnano(),
+    ])
+      .process(code)
+      .then((result) => callback(null, result.css));
   });
 
   eleventyConfig.addFilter('jsmin', function (code) {

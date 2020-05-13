@@ -7,7 +7,8 @@
   --blue: #398ac2;
   --blue-hover: #215173;
   --white: #fff;
-  --header-background: #398ac2;
+  --header-background: #387dac;
+  --header-home:
 }
 
 [data-theme='dark'] {
@@ -16,10 +17,11 @@
   --lightgray: #666;
   --gray: #c0c0c0;
   --darkgray: #eee;
-  --blue: #398ac2;
+  --blue: #48a4e5;
   --blue-hover: #215173;
   --white: #333;
   --header-background: #1d4663;
+  --header-home: #387dac73;
 }
 
 * {
@@ -244,7 +246,8 @@ nav {
 
 .nav .nav-item__home a {
   padding: 0.8em 0.9em 0.8em 2em;
-  background-color: #387dac;
+
+  background-color: var(--header-home);
   color: #fff;
   /* border-radius: 0; */
 }
