@@ -9,23 +9,23 @@ post: true
 ---
 
 I decided to use these strange times during the lockdown of the UK to update my
-site from a outdated single page static file to something a little more
+site from an outdated single static file into something a little more
 advanced. In this post I'll give a _quick_ summary of this process and the
 decisions I made along the way.
 
 ## Planning
 
 Before starting this project I outlined what I wanted to achieve with this
-update. I managed to break this down into a few main goals: the first was
-to introduce a blog to the site, ideally I wanted to write in Markdown with
-basic asset hosting. Secondly was to keep it as simple as possible to
+update. I managed to break this down into a few main goals. The first was to
+introduce a blog to the site, ideally I wanted to write in Markdown with basic
+asset hosting. Secondly, I wanted to keep it as simple as possible to
 maintain/update and deploy, the previous deployment process was lacking in every
 way, think FTP with drag and drop. I wanted not only to have blog posts on the
-site but to be able to post external links to articles I enjoyed with a quick
-description and also simple notes of one of two sentences for quick thoughts.
+site but to be able to post external links to articles I enjoyed whilst being
+able to add simple notes of one or two sentences for quick thoughts.
 
 For styling I was happy with the simple layout of the previous version of the
-site. Finally it had to be fast, for what I wanted from the site there was no
+site. Finally, it had to be fast, for what I wanted from the site there was no
 need to have an overly bloated website with megabytes of CSS/JavaScript etc
 simple small html pages should be enough.
 
@@ -34,7 +34,7 @@ simple small html pages should be enough.
 Based on the requirements and previous experience I decided the site would use
 some form of static site generator. Things such as plugins, changable themes and
 more advanced CMS features just seemed out of scope for my personal site and
-more hassle than it would be worth. Keeping my ear faily close to the ground
+more hassle than it would be worth. Keeping my ear fairly close to the ground
 within this area there were multiple options I knew of:
 
 - 11ty - a node based generator. Multiple writing and template formating.
@@ -49,19 +49,19 @@ a very _basic_ site just seemed like overkill.
 
 With 11ty, I would be able to get the site set up in a handful of template files
 and some basic configuration. It also met all the requirements I set out and has
-a lot of points of extensibilty should I wish to take advantage of in the
+a lot of points of extensibilty should I wish to take advantage of this in the
 future. During this research I also decided I would be moving my hosting. For
-this Netlify seemed like the sutible choice, they offer a great solution for
-hosting static sites, with easy deployments which I'll go into further later.
-They also offer a Git integrated [CMS](https://www.netlifycms.org/) that will
-allow me to manage the posts without needing to use Git, I see myself correcting
-all my typos with this.
+this, Netlify seemed like the suitable choice. They offer a great solution for
+hosting static sites, with easy deployments which I'll go into further detail
+with later. They also offer a Git integrated [CMS](https://www.netlifycms.org/)
+that will allow me to manage the posts without needing to use Git, I see myself
+correcting all my typos with this.
 
 ## Development
 
-The development process was straight forward and took a couple of hours stretch
-across a few days, this post probably took longer to write. There are plenty of
-boilerplate projects to start from, I used the
+The development process was straight forward and took a couple of hours
+stretched across a few days. This post probably took longer to write. There are
+plenty of boilerplate projects to start from, I used the
 [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog) as the base for
 this site. This boilerplate uses nunjunks as the templating lanuage and markdown
 as the writing format. Modifying the templates to accept the custom post types
@@ -74,20 +74,20 @@ blog pages, navigation and image size styles. All of this can be seen in the
 [index.client.css](https://github.com/last1here/ashleyburg.es/blob/master/src/_includes/index.client.css).
 
 A few more plugins were added for syntax highlight, read time estimation and the
-ability to define image sizes in markdown. Basic SEO was setup by default, I
+ability to define image sizes in markdown. Basic SEO was setup by default for which I
 added some social meta tags to improve this a bit. As highlighted earlier an
 import goal for the site was to be pretty fast, as all the components of the
 site are simple html and images it was already fast at this point. But, there
-was 2 tiny files being request on every page for the required JS and CSS,
+was 2 tiny files being requested on every page for the required JS and CSS,
 inlining and minifying these into the HTML as part of the build process
 decreased the average load time by a few 100ms. Caching these files would have
-help for returning visitors but as the files are so small the added size to the
+helped for returning visitors but as the files are so small the added size to the
 html is negligable. The final configuration to get this all working can be seen
 in the
 [.eleventy.js](https://github.com/last1here/ashleyburg.es/blob/master/.eleventy.js)
 file.
 
-Next was setting up Netlify CMS, the initial set up was as simple as adding a
+Next was setting up Netlify CMS. The initial set up was as simple as adding a
 `/admin` folder with an `index.html` that imported the required js files from a
 CDN. Making sure 11ty copied this over to the `_site` folder during build was a
 [single](https://github.com/last1here/ashleyburg.es/blob/master/.eleventy.js#L103)
@@ -100,10 +100,10 @@ repository editing beta feature.
 
 The previous version of the site had a pretty tedious deployment process. It
 involved me manually uploading the source files to the server via FTP every time
-an update was needed, probably why I didnt update it in years. Netlify greatly
+an update was needed, probably why I hadn't updated it in years. Netlify greatly
 improved this with automatic deployments straight from Github. From within the
 Netlify UI selecting the repo to deploy, the build script and the resulting dist
-folder to publish had it set up and auto-deploying in seconds.
+folder to publish, had it set up and auto-deploying in seconds.
 
 Finally pointing my domain to Netlify's load balancer was completed following
 their
@@ -121,10 +121,10 @@ secondary domain I will use for the previous host.
 In conclusion 11ty is an easy to use and customisable static site generator. The
 overall setup of the site was pretty quick, you can see the end result on the
 page you're currently on or visit the [home page](/). Netlify simplifys the
-deployment process which will remove that excuse for me not posting things, I'm
+deployment process which will remove that excuse for me to not post things, I'm
 sure I'll find another. The finished site fulfills all the goels I set at the
-beginning, I have future plans for a handful of nice to haves features. At some
-point I will get around to adding them. Leaving them here to hold myself
+beginning although I have future plans for a handful of nice to haves features.
+At some point I will get around to adding them. Leaving them here to hold myself
 accountable;
 
 - Previous post navigation.
