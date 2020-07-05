@@ -9,9 +9,11 @@ post: true
 ---
 
 I decided to use these strange times during the lockdown of the UK to update my
-site from an outdated single static file into something a little more
-advanced. In this post I'll give a _quick_ summary of this process and the
-decisions I made along the way.
+site from an outdated single static file into something a little more advanced.
+You can see the previous site in the image below. In this post I'll give a
+_quick_ summary of this process and the decisions I made along the way.
+
+<img src="/assets/2020-07/previous-site.png" class="small" alt="Image of my previous site.">
 
 ## Planning
 
