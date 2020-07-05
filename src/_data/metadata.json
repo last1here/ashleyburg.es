@@ -2,6 +2,7 @@
   "title": "Ash Burgess",
   "url": "https://ashleyburg.es/",
   "description": "Simple blog about my development experiences and other things.",
+  "image": "/assets/favicons/banner.png",
   "feed": {
     "subtitle": "Simple blog about my development experiences and other things.",
     "filename": "feed.xml",
