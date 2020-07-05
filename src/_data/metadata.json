@@ -3,13 +3,13 @@
   "url": "https://ashleyburg.es/",
   "description": "Simple blog about my development experiences and other things.",
   "feed": {
-    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "subtitle": "Simple blog about my development experiences and other things.",
     "filename": "feed.xml",
-    "path": "/feed/feed.xml",
-    "id": "https://myurl.com/"
+    "path": "/feed.xml",
+    "id": "https://ashleyburg.es/"
   },
   "author": {
-    "name": "Your Name Here",
-    "email": "youremailaddress@example.com"
+    "name": "Ash Burgess",
+    "email": "me@ashleyburg.es"
   }
 }
