@@ -9,6 +9,8 @@ collections:
   - name: "blog"
     label: "Post"
     folder: "src/posts"
+    media_folder: '/src/assets/{{year}}-{{month}}'
+    public_folder: '/assets/{{year}}-{{month}}'
     create: true
     slug: "{{year}}-{{month}}_{{slug}}"
     filter: { field: "post", value: true }
