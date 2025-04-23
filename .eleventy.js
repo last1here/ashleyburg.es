@@ -61,17 +61,22 @@ module.exports = function (eleventyConfig) {
       .then((result) => callback(null, result.css));
   });
 
-  eleventyConfig.addFilter('jsmin', function (code) {
+  eleventyConfig.addFilter('jsmin', async function (code) {
     if (env.trim() === 'dev') {
       return code;
     }
 
-    let minified = Terser.minify(code, { mangle: true, toplevel: true });
-    if (minified.error) {
+    try {
+      const minified = await Terser.minify(code, {
+        mangle: true,
+        toplevel: true,
+      });
+      return minified.code;
+    } catch (err) {
+      console.error('Terser error: ', err);
+      // Fail gracefully.
       return code;
     }
-
-    return minified.code;
   });
 
   eleventyConfig.addFilter('orphanWrap', function (text) {
