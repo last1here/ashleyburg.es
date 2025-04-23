@@ -2,7 +2,6 @@
   "name": "@last1here/site",
   "version": "0.0.1",
   "description": "A starter repository for a blog web site using the Eleventy static site generator.",
-  "type": "module",
   "scripts": {
     "build": "cross-env NODE_ENV=production eleventy",
     "watch": "cross-env NODE_ENV=dev eleventy --watch",
@@ -44,6 +43,11 @@
     "shimmer": "^1.2.1",
     "terser": "^5.29.1",
     "workbox-build": "^7.0.0"
+  },
+  "packageManager": "pnpm@10.8.0",
+  "engines": {
+    "node": ">=20.10.0 <21",
+    "pnpm": ">=10.5.0 <11"
   },
   "dependencies": {}
 }
